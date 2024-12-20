@@ -130,8 +130,86 @@ This script effectively scrapes job listings based on a search term and stores t
 
 The `DB_operation.py` script handles database operations for storing job details. Here's a brief overview:
 
-1. **Creating the Database**:
-    - The `create_database` function creates a SQLite database named `jobs.db` and a table named `jobs` to store job information.
+# Job Database Management
 
-2. **Inserting Job Data**:
-    - The `insert_job_data` function inserts job details into the `jobs` table, ensuring no duplicate entries by checking if a job with the same title already exists.
+This `DB_operation.py` script provides a simple implementation of a SQLite database to manage job information. It includes functionality to create a database, insert job data, and prevent duplicate job entries.
+
+## Features
+- **Database Creation**: Automatically creates a `jobs.db` SQLite database with a `jobs` table if it doesn't already exist.
+- **Job Insertion**: Inserts job details (job title, types, location, salary, and schedule) into the database.
+- **Duplicate Prevention**: Ensures no duplicate job titles are added to the database.
+
+## Prerequisites
+- Python 3.x
+- SQLite (comes pre-installed with Python)
+
+## Table Structure
+The `jobs` table has the following columns:
+
+| Column Name    | Data Type | Description                      |
+|----------------|-----------|----------------------------------|
+| `id`           | INTEGER   | Primary key, auto-incremented.   |
+| `job_title`    | TEXT      | Title of the job (required).     |
+| `job_types`    | TEXT      | Type of job (e.g., full-time).   |
+| `location`     | TEXT      | Location of the job (e.g., USA). |
+| `salary`       | TEXT      | Salary details (optional).       |
+| `job_schedule` | TEXT      | Job schedule (e.g., remote).     |
+
+## Usage
+
+### 1. Create the Database
+To create the database and table, simply run the `create_database` function:
+
+```python
+create_database()
+```
+This creates a SQLite database file named `jobs.db` with the required schema.
+
+### 2. Insert Job Data
+To insert job data into the database, use the `insert_job_data` function. For example:
+
+```python
+insert_job_data(
+    job_title="Software Engineer",
+    job_types="Full-Time",
+    location="New York",
+    salary="$100,000 - $120,000",
+    job_schedule="On-site"
+)
+```
+
+This adds a job entry to the database unless a job with the same title already exists.
+
+### 3. Handle Duplicate Entries
+If you attempt to insert a job title that already exists, the program will output:
+
+```
+Already Exists
+```
+This ensures that duplicate job entries are avoided.
+
+## File Descriptions
+- `jobs.db`: SQLite database file (created after running the script).
+- `create_database`: Function to create the database and table.
+- `insert_job_data`: Function to insert job details into the database.
+
+## Example Output
+Example output when running the script:
+
+1. Creating the database:
+```
+Database and table created successfully.
+```
+
+2. Inserting a new job:
+```
+Data inserted: Software Engineer at New York
+```
+
+3. Inserting a duplicate job:
+```
+Already Exists
+```
+
+## License
+This project is open-source and available under the [MIT License](LICENSE).
