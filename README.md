@@ -2,11 +2,6 @@
 
 _A Python-powered web scraper that fetches remote job listings from [Remote.co](https://remote.co) and stores them in SQLite 📊_
 
-<div align="center">
-  <img src="https://img.shields.io/badge/Python-3.8%2B-blue?logo=python" alt="Python">
-  <img src="https://img.shields.io/badge/License-MIT-green" alt="License">
-  <img src="https://img.shields.io/badge/Status-Active-brightgreen" alt="Status">
-</div>
 
 ---
 
@@ -19,12 +14,6 @@ _A Python-powered web scraper that fetches remote job listings from [Remote.co](
 
 ---
 
-## ⚙️ Requirements
-```bash
-# Install dependencies
-pip install requests beautifulsoup4
-```
-
 ---
 
 ## 🗃️ Database Schema
@@ -36,28 +25,50 @@ pip install requests beautifulsoup4
 | salary         | TEXT      | Compensation range   | 💰    |
 | job_schedule   | TEXT      | Work hours           | 🕑    |
 
----
 
 ## 🚀 Quick Start
-1. **Run the scraper**
-```bash
-python scraper.py --search "python developer"
-```
 
-2. **Check results**
-```bash
-sqlite3 jobs.db "SELECT * FROM jobs LIMIT 5;"
-```
+Follow these steps to run the **Remote Job Scraper**:
 
----
+### 1. **Clone the Repository** (if you haven't already)
+If you haven't cloned the repository yet, start by cloning it:
 
-## 🤝 Connect with Creator
-Let's build something amazing together! 🛠️
 
-[![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github)](https://github.com/Abhishek08Mishra)
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?logo=linkedin)](https://www.linkedin.com/in/abhishek-mishra-120799281/)
-[![Twitter](https://img.shields.io/badge/-Twitter-1DA1F2?logo=twitter)](https://x.com/Abhi__57)
-[![Email](https://img.shields.io/badge/-Email-D14836?logo=gmail)](abishekmishra195@gmail.com)
+git clone https://github.com/Abhishek08Mishra/remote-job-scraper.git
+cd remote-job-scraper
+
+ #### set up your environment
+ pip install -r requirements.txt
+
+ #### Run the scraper
+ python scraper.py --search "python developer"
+ 
+#### check the result
+  > Once the scraper has run successfully, the results will be saved in an SQLite database (jobs.db). To view the first 5 job listing
+         >>> sqlite3 jobs.db "SELECT * FROM jobs LIMIT 5;"
+
+# Let's build something amazing together! 🛠️
+
+## 📬 Get in Touch
+Got questions? Reach out!
+
+<div align="center">
+  <a href="https://linkedin.com/in/abhishek-mishra-120799281/">
+    <img src="https://img.shields.io/badge/-LinkedIn-0077B5?logo=linkedin" alt="LinkedIn" width="100"/>
+  </a>
+  <br>
+  <a href="https://github.com/Abhishek08Mishra">
+    <img src="https://img.shields.io/badge/-GitHub-181717?logo=github" alt="GitHub" width="100"/>
+  </a>
+  <br>
+  <a href="https://x.com/Abhi__57">
+    <img src="https://img.shields.io/badge/-X-1DA1F2?logo=x" alt="X" width="100"/>
+  </a>
+   <br>
+  <a href="mailto:abishekmishra195.com">
+    <img src="https://img.shields.io/badge/-Email-D14836?logo=gmail" alt="Email" width="100"/>
+  </a>
+</div>
 
 ---
 
